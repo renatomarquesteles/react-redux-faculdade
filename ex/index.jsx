@@ -19,4 +19,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ClassComponent from './classComponent';
 
-ReactDOM.render(<ClassComponent idade="21" />, document.getElementById('app'));
+ReactDOM.render(
+  <ClassComponent label="idade" idade={21} />,
+  document.getElementById('app')
+);
