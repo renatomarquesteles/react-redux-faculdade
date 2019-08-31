@@ -17,4 +17,7 @@ module.exports = function(server) {
   // Registra a rota /todos
   // Então, na verdade teremos a api /api/todos pronta para ser executada
   todoService.register(router, '/todos');
+
+  const carService = require('../api/car/carService');
+  carService.register(router, '/cars');
 };
