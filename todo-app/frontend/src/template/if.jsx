@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+
 export default props => {
   if (props.test) {
-    return props.children
+    return props.children;
   } else {
-    return false
+    return false;
   }
-}
+};
