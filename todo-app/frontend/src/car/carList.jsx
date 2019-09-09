@@ -1,5 +1,7 @@
 import React from 'react';
+
 import IconButton from '../template/iconButton';
+import Grid from '../template/grid';
 
 export default props => {
   const renderRows = () => {
@@ -22,17 +24,19 @@ export default props => {
   };
 
   return (
-    <table className="table">
-      <thead>
-        <tr>
-          <th>Marca</th>
-          <th>Modelo</th>
-          <th>Ano</th>
-          <th>Flex</th>
-          <th>Ações</th>
-        </tr>
-      </thead>
-      <tbody>{renderRows()}</tbody>
-    </table>
+    <Grid cols="12 9 10">
+      <table className="table">
+        <thead>
+          <tr>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Ano</th>
+            <th>Flex</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>{renderRows()}</tbody>
+      </table>
+    </Grid>
   );
 };

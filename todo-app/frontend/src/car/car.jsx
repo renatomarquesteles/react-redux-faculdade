@@ -42,7 +42,10 @@ export default class Car extends Component {
   }
 
   handleAno(e) {
-    this.setState({ ...this.state, ano: Number(e.target.value) });
+    this.setState({
+      ...this.state,
+      ano: parseInt(e.target.value) ? parseInt(e.target.value) : ''
+    });
   }
 
   handleFlex(flex) {
@@ -61,7 +64,7 @@ export default class Car extends Component {
   render() {
     return (
       <div>
-        <PageHeader name="Carros" small="Cadastro"></PageHeader>
+        <PageHeader titulo="Carros" subtitulo="Cadastro"></PageHeader>
         <CarForm
           marca={this.state.marca}
           modelo={this.state.modelo}
