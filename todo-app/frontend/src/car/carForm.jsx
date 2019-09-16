@@ -49,14 +49,14 @@ export default props => (
             <label>Flex</label>
             <div className="radio">
               <label onClick={() => props.handleFlex(true)}>
-                <input type="radio" checked={props.flex} />
+                <input type="radio" readOnly checked={props.flex} />
                 Sim
               </label>
               <label
                 onClick={() => props.handleFlex(false)}
                 style={{ marginLeft: 15 }}
               >
-                <input type="radio" checked={!props.flex} />
+                <input type="radio" readOnly checked={!props.flex} />
                 Não
               </label>
             </div>

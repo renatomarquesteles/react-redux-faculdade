@@ -17,6 +17,8 @@ export default class Car extends Component {
     this.handleFlex = this.handleFlex.bind(this);
     this.handleAdd = this.handleAdd.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
+    this.handleMarkAsDone = this.handleMarkAsDone.bind(this);
+    this.handleMarkAsPending = this.handleMarkAsPending.bind(this);
     this.refresh();
   }
 
@@ -61,6 +63,18 @@ export default class Car extends Component {
     axios.delete(`${URL}/${car._id}`).then(resp => this.refresh());
   }
 
+  handleMarkAsDone(car) {
+    axios
+      .put(`${URL}/${car._id}`, { ...car, done: true })
+      .then(resp => this.refresh());
+  }
+
+  handleMarkAsPending(car) {
+    axios
+      .put(`${URL}/${car._id}`, { ...car, done: false })
+      .then(resp => this.refresh());
+  }
+
   render() {
     return (
       <div>
@@ -76,7 +90,12 @@ export default class Car extends Component {
           handleFlex={this.handleFlex}
           handleAdd={this.handleAdd}
         />
-        <CarList list={this.state.list} handleRemove={this.handleRemove} />
+        <CarList
+          list={this.state.list}
+          handleRemove={this.handleRemove}
+          handleMarkAsDone={this.handleMarkAsDone}
+          handleMarkAsPending={this.handleMarkAsPending}
+        />
       </div>
     );
   }
