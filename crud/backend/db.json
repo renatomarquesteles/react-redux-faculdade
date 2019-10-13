@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Arthur Oliveira",
+      "email": "aoliveira@cod3r.com.br"
+    },
+    {
+      "id": 2,
+      "name": "Maria Julia da Silva",
+      "email": "mjds@empresa.com"
+    }
+  ],
+  "products": [
+    {
+      "id": 3,
+      "description": "Paçoca",
+      "quantity": 3558,
+      "price": 0.99,
+      "marca": "Paçoquita"
+    },
+    {
+      "description": "qqqq",
+      "quantity": 22,
+      "price": 22,
+      "marca": "ggg",
+      "id": 4
+    }
+  ],
+  "compras": [
+    {
+      "id": 1,
+      "id_user": 1,
+      "id_product": 1,
+      "quantity": 3,
+      "price": 3297
+    }
+  ]
+}
