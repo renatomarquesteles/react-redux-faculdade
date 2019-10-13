@@ -18,6 +18,11 @@ const carSchema = new mongoose.Schema({
     type: Boolean,
     required: true
   },
+  done: {
+    type: Boolean,
+    required: true,
+    default: false
+  },
   createdAt: {
     type: Date,
     default: Date.now
