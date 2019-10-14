@@ -9,31 +9,78 @@
       "id": 2,
       "name": "Maria Julia da Silva",
       "email": "mjds@empresa.com"
+    },
+    {
+      "name": "Renato Marques Teles",
+      "email": "renatomarquesteles@gmail.com",
+      "id": 3
     }
   ],
   "products": [
     {
       "id": 3,
       "description": "Paçoca",
-      "quantity": 3558,
+      "quantity": 712,
       "price": 0.99,
       "marca": "Paçoquita"
     },
     {
-      "description": "qqqq",
-      "quantity": 22,
-      "price": 22,
-      "marca": "ggg",
+      "description": "iPhone",
+      "quantity": 498,
+      "price": 5999.99,
+      "marca": "Apple",
       "id": 4
+    },
+    {
+      "description": "Bala",
+      "quantity": 818,
+      "price": 0.45,
+      "marca": "Chita",
+      "id": 5
     }
   ],
   "compras": [
     {
-      "id": 1,
       "id_user": 1,
-      "id_product": 1,
-      "quantity": 3,
-      "price": 3297
+      "id_product": 3,
+      "quantity": 15,
+      "price": 14.85,
+      "id": 1
+    },
+    {
+      "id_product": 4,
+      "id_user": 3,
+      "quantity": 1,
+      "price": 5999.99,
+      "id": 2
+    },
+    {
+      "id_user": 1,
+      "id_product": 3,
+      "quantity": 5,
+      "price": 4.95,
+      "id": 3
+    },
+    {
+      "id_product": 4,
+      "id_user": 2,
+      "quantity": 1,
+      "price": 5999.99,
+      "id": 4
+    },
+    {
+      "id_product": 3,
+      "id_user": 3,
+      "quantity": 31,
+      "price": 30.69,
+      "id": 5
+    },
+    {
+      "id_product": 5,
+      "id_user": 1,
+      "quantity": 20,
+      "price": 9,
+      "id": 6
     }
   ]
 }
