@@ -4,12 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "json-server --watch db.json --port 3001"
+    "dev": "nodemon src/loader.js",
+    "production": "pm2 start src/loader.js --name todo-app"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "json-server": "0.13.0"
+  "devDependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.7.0",
+    "node-restful": "^0.2.5",
+    "nodemon": "^1.11.0",
+    "pm2": "^2.1.5"
   }
 }
