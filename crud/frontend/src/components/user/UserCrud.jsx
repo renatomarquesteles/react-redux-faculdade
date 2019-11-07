@@ -8,9 +8,9 @@ const headerProps = {
     subtitle: 'Cadastro de usuários: Incluir, Listar, Alterar e Excluir!'
 }
 
-const baseUrl = 'http://localhost:3001/users'
+const baseUrl = 'http://localhost:3003/api/users'
 const initialState = {
-    user: { name: '', email: '' },
+    user: { id: '', name: '', email: '' },
     list: []
 }
 
@@ -30,8 +30,8 @@ export default class UserCrud extends Component {
 
     save() {
         const user = this.state.user
-        const method = user.id ? 'put' : 'post'
-        const url = user.id ? `${baseUrl}/${user.id}` : baseUrl
+        const method = user._id ? 'put' : 'post'
+        const url = user._id ? `${baseUrl}/${user._id}` : baseUrl
         axios[method](url, user)
             .then(resp => {
                 const list = this.getUpdatedList(resp.data)
@@ -41,7 +41,7 @@ export default class UserCrud extends Component {
 
     getUpdatedList(user, add = true) {
         const list = this.state.list.filter(u => u.id !== user.id)
-        if(add) list.unshift(user)
+        if (add) list.unshift(user)
         return list
     }
 
@@ -55,6 +55,16 @@ export default class UserCrud extends Component {
         return (
             <div className="form">
                 <div className="row">
+                    <div className="col-12 col-md-6">
+                        <div className="form-group">
+                            <label>ID</label>
+                            <input type="text" className="form-control"
+                                name="id"
+                                value={this.state.user.id}
+                                onChange={e => this.updateField(e)}
+                                placeholder="Digite o código..." />
+                        </div>
+                    </div>
                     <div className="col-12 col-md-6">
                         <div className="form-group">
                             <label>Nome</label>
@@ -101,7 +111,7 @@ export default class UserCrud extends Component {
     }
 
     remove(user) {
-        axios.delete(`${baseUrl}/${user.id}`).then(resp => {
+        axios.delete(`${baseUrl}/${user._id}`).then(resp => {
             const list = this.getUpdatedList(user, false)
             this.setState({ list })
         })
@@ -146,7 +156,7 @@ export default class UserCrud extends Component {
             )
         })
     }
-    
+
     render() {
         return (
             <Main {...headerProps}>

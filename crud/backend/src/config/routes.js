@@ -20,4 +20,7 @@ module.exports = function(server) {
 
   const carService = require('../api/car/carService');
   carService.register(router, '/cars');
+
+  const userService = require('../api/user/userService');
+  userService.register(router, '/users');
 };
